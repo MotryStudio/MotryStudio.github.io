@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>木星工作室</title>
-</head>
-<body>
-<p>Welcome to Motry Studio</p>
-</body>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body style="text-align:center;" id="body">
+        <p id="UP" style="font-size: 19px; font-weight: bold;"></p>
+        <button onClick="Fun()">点击这里</button>
+        <p id="DOWN" style="color: green; font-size: 24px; font-weight: bold;"></p>
+        <script>
+            var up = document.getElementById('UP');
+            var down = document.getElementById('DOWN');
+            up.innerHTML =
+                '单击按钮，生成随机字母数字字符串';
+
+            function randomStr(len, arr) {
+                var ans = '';
+                for(var i = len; i > 0; i--) {
+                    ans +=
+                        arr[Math.floor(Math.random() * arr.length)];
+                }
+                return ans;
+            }
+
+            function Fun() {
+                down.innerHTML = randomStr(20, '12345abcde');
+            }
+        </script>
+    </body>
 </html>
